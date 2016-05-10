@@ -1,0 +1,20 @@
+{
+  "name": "qa-tests",
+  "version": "1.0.0",
+  "description": "QA testing starter",
+  "main": "index.js",
+  "scripts": {
+    "wd-update": "webdriver-manager update",
+    "wd-start": "webdriver-manager start",
+    "test": "protractor protractor.conf.js"
+  },
+  "author": "aherok",
+  "license": "MIT",
+  "devDependencies": {
+    "extend": "^3.0.0",
+    "jasmine": "^2.4.1",
+    "path": "^0.12.7",
+    "protractor": "^3.3.0",
+    "util": "^0.10.3"
+  }
+}
