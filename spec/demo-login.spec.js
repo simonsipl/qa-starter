@@ -9,14 +9,20 @@ describe('Login view', function () {
 
   var userDropdownSelector = element(by.css('.navbar a.user-dropdown'));
 
-  it('should start on login view and allow to log user in', function () {
+  beforeEach(function () {
+    // ensure we are logged out before each test
+    browser.get('/logout');
+  });
 
+  it('should allow to display login form', function () {
     // visit login page
-    browser.get('/login');
     expect(loginForm.isPresent()).toBeTruthy();
     expect(loginHeading.getText()).toEqual('LOG IN')
+  });
 
-    // try to log in
+  it('should allow to log user in', function () {
+
+    // log user in
     username.sendKeys('admin@domain.tld');
     password.sendKeys('test');
     submitBtn.click();
