@@ -1,4 +1,5 @@
 var LoginPage = require('../pages/demo-loginPage');
+var Userdata = require('../data/demo-userdata');
 
 describe('Login view', function () {
 
@@ -18,8 +19,8 @@ describe('Login view', function () {
 
   it('should allow to log user in', function () {
 
-    LoginPage.setUsername('admin@domain.tld');
-    LoginPage.setPassword('test');
+    LoginPage.setUsername(Userdata.admin.username);
+    LoginPage.setPassword(Userdata.admin.password);
     LoginPage.submit();
 
     expect(userDropdownSelector.isPresent()).toBeTruthy();
