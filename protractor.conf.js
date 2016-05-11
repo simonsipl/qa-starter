@@ -8,12 +8,37 @@ exports.config = {
   capabilities: {
     "browserName": "chrome"
   },
+  /*
+   * By this you can use multiBrowser
+   *
+  multiCapabilities:[
+    {
+      'browserName' : 'chrome'
+    },
+    {
+      'browserName' : 'firefox'
+    },
+    {
+      'browserName' : 'internet explorer',
+      'platform' : 'ANY',
+      'version' : '11'
+    },
+    {
+      'browserName' : 'phantomjs'
+    },
+    *
+    * Force protractor to use only one browser at a time
+    maxSessions: 1,
 
+    */
+  ],
   allScriptsTimeout: 60000,
 
   jasmineNodeOpts: {
     defaultTimeoutInterval: 360000,
-    showTiming: true
+    showTiming: true,
+    isVerbose:true,
+    includeStackTrace:true
   },
 
   onPrepare: function () {
