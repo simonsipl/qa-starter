@@ -4,20 +4,23 @@ exports.config = {
   seleniumAddress: 'http://localhost:4444/wd/hub',
 
   specs: ['spec/**/*[sS]pec.js'],
-
+/*
   capabilities: {
     "browserName": "chrome"
   },
+
   /*
    * By this you can use multiBrowser
    *
+   */
+
   multiCapabilities:[
     {
       'browserName' : 'chrome'
     },
     {
       'browserName' : 'firefox'
-    },
+    },/*
     {
       'browserName' : 'internet explorer',
       'platform' : 'ANY',
@@ -26,19 +29,19 @@ exports.config = {
     {
       'browserName' : 'phantomjs'
     },
-    *
-    * Force protractor to use only one browser at a time
-    maxSessions: 1,
-
     */
   ],
+  /*
+  * Force protractor to use only one browser at a time
+  */
+  maxSessions: 1,
   allScriptsTimeout: 60000,
 
   jasmineNodeOpts: {
     defaultTimeoutInterval: 360000,
     showTiming: true,
-    isVerbose:true,
-    includeStackTrace:true
+    //isVerbose:true,
+    //includeStackTrace:true
   },
 
   onPrepare: function () {
@@ -51,5 +54,5 @@ exports.config = {
   /*
    Set your app's main URL here, so you can use relative urls along the tests
    */
-  baseUrl: 'https://localhost:8080/',
+  baseUrl: 'https://localhost:8000/',
 };
